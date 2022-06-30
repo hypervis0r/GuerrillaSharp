@@ -76,14 +76,16 @@ namespace GuerrillaSharp
 			this.SidToken = tempmail.SidToken;
 		}
 
-		public async Task CheckEmail()
+		public async Task<List<Email>> CheckEmail()
 		{
-			string url = "https://api.guerrillamail.com/ajax.php?f=check_email&seq=0";
+			string url = "https://api.guerrillamail.com/ajax.php?f=check_email&seq=0&sid_token=" + this.SidToken;
 			Response response = await MakeGetRequest(url, Cookies);
 
 			CheckEmailResponse tempmail = JsonConvert.DeserializeObject<CheckEmailResponse>(response.Json);
-			this.Emails = tempmail.Emails;
+			//this.Emails = tempmail.Emails;
 			this.SidToken = tempmail.SidToken;
+
+			return tempmail.Emails;
 		}
 		public async Task<Email> FetchEmail(string id)
 		{

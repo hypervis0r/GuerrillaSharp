@@ -23,16 +23,16 @@ namespace GuerillaSharp.Test
         public async Task TestCheckEmail()
         {
             await email.GetEmailAddress();
-            await email.CheckEmail();
-            Assert.AreNotEqual(0, email.EmailCount);
+            var emails = await email.CheckEmail();
+            Assert.AreNotEqual(0, emails.Count);
         }
 
         [TestMethod]
         public async Task TestFetchEmail()
         {
             await email.GetEmailAddress();
-            await email.CheckEmail();
-            Email selectemail = await email.FetchEmail(email.Emails.FirstOrDefault().MailId);
+            var emails = await email.CheckEmail();
+            Email selectemail = await email.FetchEmail(emails.First().MailId);
             Assert.AreNotEqual(0, selectemail.MailId.Length);
         }
     }
