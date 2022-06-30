@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GuerrillaSharp;
 using System.Linq;
 using GuerrillaSharp.Models;
+using System.Threading.Tasks;
 
 namespace GuerillaSharp.Test
 {
@@ -12,26 +13,26 @@ namespace GuerillaSharp.Test
         GuerrillaMail email = new GuerrillaMail();
 
         [TestMethod]
-        public void TestGetEmailAddress()
+        public async Task TestGetEmailAddress()
         {
-            email.GetEmailAddress();
+            await email.GetEmailAddress();
             Assert.IsNotNull(email.EmailAddress);
         }
 
         [TestMethod]
-        public void TestCheckEmail()
+        public async Task TestCheckEmail()
         {
-            email.GetEmailAddress();
-            email.CheckEmail();
+            await email.GetEmailAddress();
+            await email.CheckEmail();
             Assert.IsNotNull(email.Emails);
         }
 
         [TestMethod]
-        public void TestFetchEmail()
+        public async Task TestFetchEmail()
         {
-            email.GetEmailAddress();
-            email.CheckEmail();
-            Email selectemail = email.FetchEmail(email.Emails.FirstOrDefault().MailId);
+            await email.GetEmailAddress();
+            await email.CheckEmail();
+            Email selectemail = await email.FetchEmail(email.Emails.FirstOrDefault().MailId);
             Assert.IsNotNull(selectemail.MailId);
         }
     }
