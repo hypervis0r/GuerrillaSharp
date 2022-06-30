@@ -11,6 +11,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>api;guerrillamail;mail;guerrillasharp;email</PackageTags>
     <PackageReleaseNotes>Updated from NostraThomas' source</PackageReleaseNotes>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
