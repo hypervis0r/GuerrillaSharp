@@ -9,10 +9,10 @@ https://www.nuget.org/packages/Hypervis0r.GuerrillaSharp/
 
 GuerrillaMail mail = new GuerrillaMail();
 
-mail.GetEmailAddress(); // Initializes mailbox
+await mail.GetEmailAddress(); // Initializes mailbox
 
-mail.CheckEmail(); // Checks mailbox for email
+await mail.CheckEmail(); // Checks mailbox for email
 
-mail.FetchEmail(emailId); // Gets specific email
+await mail.FetchEmail(emailId); // Gets specific email
 
 ```
