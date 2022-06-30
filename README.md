@@ -1,11 +1,9 @@
 # GuerrillaSharp
-C# Library for GuerrillaMail API
+C# Library for the GuerrillaMail API
 
-https://www.nuget.org/packages/GuerrillaSharp/
+https://www.nuget.org/packages/Hypervis0r.GuerrillaSharp/
 
-A tiny little library for using GuerrillaMail apis in your C# app. Receive any emails you need to with this!
-
-Usage:
+## Usage
 
 ```cs
 
@@ -17,3 +15,4 @@ mail.CheckEmail(); // Checks mailbox for email
 
 mail.FetchEmail(emailId); // Gets specific email
 
+```
