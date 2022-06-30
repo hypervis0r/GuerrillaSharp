@@ -7,13 +7,13 @@ A tiny little library for using GuerrillaMail apis in your C# app. Receive any e
 
 Usage:
 
-GuerrillaMail mail = new GuerrillaMail;
+```cs
 
+GuerrillaMail mail = new GuerrillaMail();
 
+mail.GetEmailAddress(); // Initializes mailbox
 
-mail.GetEmailAddress();      Initializes mailbox
+mail.CheckEmail(); // Checks mailbox for email
 
-mail.CheckEmail();      Checks mailbox for email
-
-mail.FetchEmail(emailId);       Gets specific email
+mail.FetchEmail(emailId); // Gets specific email
 
