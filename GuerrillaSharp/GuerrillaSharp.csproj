@@ -3,6 +3,14 @@
     <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageId>Hypervis0r.$(AssemblyName)</PackageId>
+    <Authors>hypervis0r</Authors>
+    <Description>C# Library for GuerrillaMail API</Description>
+    <PackageProjectUrl>https://github.com/hypervis0r/GuerrillaSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hypervis0r/GuerrillaSharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>api;guerrillamail;mail;guerrillasharp;email</PackageTags>
+    <PackageReleaseNotes>Updated from NostraThomas' source</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />

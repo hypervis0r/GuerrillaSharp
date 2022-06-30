@@ -24,7 +24,7 @@ namespace GuerillaSharp.Test
         {
             await email.GetEmailAddress();
             await email.CheckEmail();
-            Assert.IsNotNull(email.Emails);
+            Assert.AreNotEqual(0, email.EmailCount);
         }
 
         [TestMethod]
@@ -33,7 +33,7 @@ namespace GuerillaSharp.Test
             await email.GetEmailAddress();
             await email.CheckEmail();
             Email selectemail = await email.FetchEmail(email.Emails.FirstOrDefault().MailId);
-            Assert.IsNotNull(selectemail.MailId);
+            Assert.AreNotEqual(0, selectemail.MailId.Length);
         }
     }
 }

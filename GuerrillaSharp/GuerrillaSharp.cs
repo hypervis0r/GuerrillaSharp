@@ -30,7 +30,7 @@ namespace GuerrillaSharp
 		public List<Email> Emails { get; set; }
 
 		[JsonProperty("count")]
-		public int EmailCount { get; set; }
+		public int EmailCount { get { return Emails.Count; } }
 
 		[JsonProperty("stats")]
 		public Stats Stats { get; set; }
@@ -81,10 +81,8 @@ namespace GuerrillaSharp
 			string url = "https://api.guerrillamail.com/ajax.php?f=check_email&seq=0";
 			Response response = await MakeGetRequest(url, Cookies);
 
-			GuerrillaMail tempmail = JsonConvert.DeserializeObject<GuerrillaMail>(response.Json);
-			this.EmailCount = tempmail.EmailCount;
+			CheckEmailResponse tempmail = JsonConvert.DeserializeObject<CheckEmailResponse>(response.Json);
 			this.Emails = tempmail.Emails;
-			this.Stats = tempmail.Stats;
 			this.SidToken = tempmail.SidToken;
 		}
 		public async Task<Email> FetchEmail(string id)
